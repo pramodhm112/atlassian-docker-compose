@@ -2,15 +2,20 @@ version: '3'
 
 services:
   postgresql:
-    image: postgres:alpine
+    image: postgres:11
     environment:
       POSTGRES_DB: confdb
       POSTGRES_USER: confdb
       POSTGRES_PASSWORD: confdb
     ports:
-     - "5432:5432"
+      - "5432:5432"
     volumes:
       - "pgdataconf:/var/lib/postgresql/data"
-      
+    networks:
+      - confnetwork
+
 volumes:
   pgdataconf: {}
+
+networks:
+  confnetwork:
