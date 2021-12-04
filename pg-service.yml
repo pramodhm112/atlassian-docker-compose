@@ -8,9 +8,9 @@ services:
       POSTGRES_USER: confdb
       POSTGRES_PASSWORD: confdb
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
-      - "pgdataconf:/var/lib/postgresql/data"
+      - 'pgdataconf:/var/lib/postgresql/data'
     networks:
       - confnetwork
 
